@@ -1,0 +1,22 @@
+.chart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .emissions-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  .emissions-table th, .emissions-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .emissions-table th {
+    background-color: #f4f4f4;
+  }
+  
