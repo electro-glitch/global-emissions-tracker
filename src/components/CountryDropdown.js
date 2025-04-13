@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { loadCSV } from "../utils/readCSV.js";
 
 const CountryDropdown = ({ onSelect }) => {
   const [countries, setCountries] = useState([]);
