@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+
 const CountryDropdown = ({ onSelect }) => {
   const [countries, setCountries] = useState([]);
 
@@ -20,6 +21,17 @@ const CountryDropdown = ({ onSelect }) => {
       ))}
     </select>
   );
+};
+const loadCSV = async (fileName) => {
+  return new Promise((resolve, reject) => {
+    Papa.parse(`${process.env.PUBLIC_URL}/data/${fileName}`, {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      complete: (result) => resolve(result.data),
+      error: (error) => reject(error),
+    });
+  });
 };
 
 export default CountryDropdown;
