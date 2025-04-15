@@ -1,0 +1,31 @@
+.emissions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    background: #f7fafc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  
+  .emissions-table th,
+  .emissions-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e0e7ef;
+    text-align: left;
+  }
+  
+  .emissions-table th {
+    background-color: #e3f0fa;
+    font-weight: 600;
+    color: #2d3a4a;
+  }
+  
+  .emissions-table tr:nth-child(even) {
+    background-color: #f0f4f8;
+  }
+  
+  .emissions-table tr:last-child td {
+    border-bottom: none;
+  }
+  

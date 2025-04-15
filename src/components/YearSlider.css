@@ -1,0 +1,19 @@
+.year-slider-container {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .rc-slider-track {
+    background-color: #4a90e2 !important;
+  }
+  
+  .rc-slider-handle {
+    border: solid 2px #4a90e2 !important;
+  }
+  
+  .rc-slider-handle:active {
+    box-shadow: 0 0 5px #4a90e2 !important;
+  }
+  

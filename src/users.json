@@ -1,0 +1,6 @@
+{
+    "ishaan": { "password": "ishaan123", "role": "admin" },
+    "tanay": { "password": "tanay123", "role": "admin" },
+    "keshav": { "password": "keshav123", "role": "admin" }
+  }
+  
