@@ -1,13 +1,13 @@
--- PL/SQL Command: Update Total Emissions
-CREATE OR REPLACE PROCEDURE update_total_emissions AS
+DELIMITER $$
+
+CREATE TRIGGER check_negative_emissions
+BEFORE INSERT ON sector_emissions
+FOR EACH ROW
 BEGIN
-  UPDATE country_emissions ce
-  SET ce.total_emissions = (
-    SELECT SUM(se."Sector-wise Total Emissions")
-    FROM sector_emissions se
-    WHERE se.country_name = ce.country_name
-      AND se.year = ce.year
-  );
-  DBMS_OUTPUT.PUT_LINE('Total emissions updated successfully');
-END update_total_emissions;
-/
+  IF NEW.`Sector-wise Total Emissions` < 0 AND NEW.sector != 'Land Use' THEN
+    SIGNAL SQLSTATE '45000'
+      SET MESSAGE_TEXT = 'Negative emissions only allowed for Land Use sector';
+  END IF;
+END$$
+
+DELIMITER ;
