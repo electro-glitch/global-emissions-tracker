@@ -25,15 +25,21 @@ export default function LoginPage({ onLogin }) {
         body: JSON.stringify({ username, password }),
       });
 
-      if (!response.ok) throw new Error("Connection error");
+      let data;
+        try {
+          data = await response.json();
+        } catch {
+          setError("Server error. Please try again.");
+          setIsLoading(false);
+          return;
+        }
 
-      const data = await response.json();
+        if (response.ok && data.success) {
+          onLogin(username, data.role);
+        } else {
+          setError(data?.message || "Invalid credentials");
+        }
 
-      if (data.success) {
-        onLogin(username, data.role);
-      } else {
-        setError(data.message || "Invalid credentials");
-      }
     } catch (error) {
       setError("Connection error. Please check your server.");
       console.error(error.message);
