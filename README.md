@@ -27,3 +27,5 @@ A global emissions tracker, built to ease access to climate data for the general
 ---
 
 _Built as a project for Database Systems Lab_
+
+_(since Vercel doesn't support hosting a large database, the deployment may not function as intended)_
